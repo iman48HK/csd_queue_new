@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QueueFlow</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="header">
+        <div class="header__brand">
+          <img
+            class="header__logo"
+            src="https://media.base44.com/images/public/69c35c02fbb346ea1593374f/1eda939b2_hkcsd.png"
+            alt="HKCSD"
+            width="56"
+            height="56"
+          />
+          <div class="header__titles">
+            <h1 class="header__title">Smart Visit Management System - LWCI</h1>
+            <p class="header__date" id="header-date"></p>
+          </div>
+        </div>
+        <div class="header__clock-wrap">
+          <svg class="header__clock-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.5" />
+            <path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+          </svg>
+          <time class="header__time" id="clock"></time>
+          <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+            <span class="theme-toggle__sun" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="20" height="20">
+                <circle cx="12" cy="12" r="4" fill="currentColor" />
+                <g stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+                  <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+                </g>
+              </svg>
+            </span>
+            <span class="theme-toggle__moon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="18" height="18">
+                <path
+                  fill="currentColor"
+                  d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"
+                />
+              </svg>
+            </span>
+          </button>
+        </div>
+      </header>
+
+      <p class="status-line">
+        <span class="status-line__dot" aria-hidden="true"></span>
+        <span>Live Queue Status</span>
+        <span class="status-line__sep">·</span>
+        <span id="active-count-label">7 tickets active</span>
+      </p>
+
+      <main class="columns">
+        <section class="queue-col queue-col--handin" aria-labelledby="col-handin">
+          <div class="queue-col__head">
+            <div class="queue-col__icon queue-col__icon--hand" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0" />
+                <path d="M14 10V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v2" />
+                <path d="M10 10.5V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v8" />
+                <path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 .86-3.35l.59-.22A2 2 0 0 1 6 18l4.24-4.24 2.82-2.82" />
+              </svg>
+            </div>
+            <div>
+              <h2 class="queue-col__title" id="col-handin">Hand-In</h2>
+              <p class="queue-col__meta"><span id="count-handin">2</span> tickets</p>
+            </div>
+          </div>
+          <div class="ticket-panel" id="tickets-handin"></div>
+        </section>
+
+        <section class="queue-col queue-col--security" aria-labelledby="col-security">
+          <div class="queue-col__head">
+            <div class="queue-col__icon queue-col__icon--shield" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22">
+                <path
+                  fill="currentColor"
+                  d="M12 2 4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3zm0 17.91C8.61 19.21 6 15.45 6 11.09V6.39l6-2.25 6 2.25v4.7c0 4.36-2.61 8.12-6 8.82z"
+                />
+              </svg>
+            </div>
+            <div>
+              <h2 class="queue-col__title" id="col-security">Security Check</h2>
+              <p class="queue-col__meta"><span id="count-security">2</span> tickets</p>
+            </div>
+          </div>
+          <div class="ticket-panel" id="tickets-security"></div>
+        </section>
+
+        <section class="queue-col queue-col--waiting" aria-labelledby="col-waiting">
+          <div class="queue-col__head">
+            <div class="queue-col__icon queue-col__icon--wait" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22">
+                <path
+                  fill="currentColor"
+                  d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.2 3.2.8-1.3-4.5-2.7V7z"
+                />
+              </svg>
+            </div>
+            <div>
+              <h2 class="queue-col__title" id="col-waiting">Waiting</h2>
+              <p class="queue-col__meta"><span id="count-waiting">7</span> tickets</p>
+            </div>
+          </div>
+          <div class="ticket-panel" id="tickets-waiting"></div>
+        </section>
+      </main>
+
+      <div class="ticker-wrap" aria-hidden="true">
+        <div class="ticker">
+          <span class="ticker__text">
+            Positions in the queue are generated automatically and are approximate only. Actual wait times may vary due to high demand, staffing levels, and operational requirements. Thank you for your patience.
+            · 排隊位置由系統自動生成，僅供參考。實際等待時間可能會因需求量大、人手不足或不可預見的情況而有所不同
+          </span>
+          <span class="ticker__text" aria-hidden="true">
+            Positions in the queue are generated automatically and are approximate only. Actual wait times may vary due to high demand, staffing levels, and operational requirements. Thank you for your patience.
+            · 排隊位置由系統自動生成，僅供參考。實際等待時間可能會因需求量大、人手不足或不可預見的情況而有所不同
+          </span>
+        </div>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
