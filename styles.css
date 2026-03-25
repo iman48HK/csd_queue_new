@@ -133,7 +133,7 @@ body {
 }
 
 .header__time {
-  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-size: clamp(1.875rem, 5vw, 2.5rem); /* +25% */
   font-weight: 700;
   font-variant-numeric: tabular-nums;
   letter-spacing: -0.02em;
@@ -305,7 +305,7 @@ html[data-theme="dark"] .queue-col__title {
   border: none;
   background: rgba(255, 255, 255, 0.45);
   color: var(--text);
-  font-size: clamp(2.1rem, 4vw, 2.7rem); /* 2x previous size (used by chips) */
+  font-size: clamp(2.625rem, 5vw, 3.375rem); /* +25% */
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem 1rem;
@@ -342,7 +342,7 @@ html[data-theme="dark"] .queue-col--waiting .ticket-panel {
 
 .ticket-chip__code {
   font-variant-numeric: tabular-nums;
-  font-weight: 800;
+  font-weight: 900;
   font-size: inherit;
   color: #fff;
 }
