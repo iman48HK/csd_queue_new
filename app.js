@@ -88,9 +88,6 @@ function updateCounts() {
     const el = document.getElementById(id);
     if (el) el.textContent = String(v);
   };
-  setText("count-handin", QUEUE.handIn.length);
-  setText("count-security", QUEUE.security.length);
-  setText("count-waiting", QUEUE.waiting.length);
 }
 
 function formatDate(d) {

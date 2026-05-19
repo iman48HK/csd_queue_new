@@ -216,7 +216,7 @@ html[data-theme="dark"] .theme-toggle__moon {
 
 .queue-col {
   background: var(--surface);
-  border: 1px solid var(--border);
+  border: 1px solid #ffffff;
   border-radius: 12px;
   box-shadow: var(--shadow);
   padding: 0.9rem;
@@ -283,12 +283,6 @@ html[data-theme="dark"] .theme-toggle__moon {
 
 html[data-theme="dark"] .queue-col__title {
   color: #ffffff;
-}
-
-.queue-col__meta {
-  margin: 0.1rem 0 0;
-  font-size: 1.224rem; /* +20% from 1.02rem */
-  color: var(--text-muted);
 }
 
 /* Plain text ticket panel */

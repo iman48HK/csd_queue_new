@@ -14,47 +14,6 @@
   </head>
   <body>
     <div class="app">
-      <header class="header">
-        <div class="header__brand">
-          <img
-            class="header__logo"
-            src="https://media.base44.com/images/public/69c35c02fbb346ea1593374f/1eda939b2_hkcsd.png"
-            alt="HKCSD"
-            width="56"
-            height="56"
-          />
-          <div class="header__titles">
-            <h1 class="header__title">Smart Visit Management System - LWCI</h1>
-            <p class="header__date" id="header-date"></p>
-          </div>
-        </div>
-        <div class="header__clock-wrap">
-          <svg class="header__clock-icon" viewBox="0 0 24 24" aria-hidden="true">
-            <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.5" />
-            <path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
-          </svg>
-          <time class="header__time" id="clock"></time>
-          <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
-            <span class="theme-toggle__sun" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="20" height="20">
-                <circle cx="12" cy="12" r="4" fill="currentColor" />
-                <g stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
-                  <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
-                </g>
-              </svg>
-            </span>
-            <span class="theme-toggle__moon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="18" height="18">
-                <path
-                  fill="currentColor"
-                  d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"
-                />
-              </svg>
-            </span>
-          </button>
-        </div>
-      </header>
-
       <p class="status-line">
         <span class="status-line__dot" aria-hidden="true"></span>
         <span>Live Queue Status</span>
@@ -75,7 +34,6 @@
             </div>
             <div>
               <h2 class="queue-col__title" id="col-handin">Hand-In 交來物品</h2>
-              <p class="queue-col__meta"><span id="count-handin">2</span> tickets</p>
             </div>
           </div>
           <div class="ticket-panel" id="tickets-handin"></div>
@@ -93,7 +51,6 @@
             </div>
             <div>
               <h2 class="queue-col__title" id="col-security">Security Check 保安檢查</h2>
-              <p class="queue-col__meta"><span id="count-security">2</span> tickets</p>
             </div>
           </div>
           <div class="ticket-panel" id="tickets-security"></div>
@@ -111,7 +68,6 @@
             </div>
             <div>
               <h2 class="queue-col__title" id="col-waiting">Waiting 現正等候</h2>
-              <p class="queue-col__meta"><span id="count-waiting">7</span> tickets</p>
             </div>
           </div>
           <div class="ticket-panel" id="tickets-waiting"></div>
