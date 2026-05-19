@@ -41,6 +41,8 @@ function splitTicketCode(code) {
   return { prefix: match[1], number: match[2] };
 }
 
+const FIRST_TICKET_HIGHLIGHT_MS = 30_000;
+
 function renderTickets(containerId, items, options = {}) {
   const panel = document.getElementById(containerId);
   if (!panel) return;
@@ -55,6 +57,19 @@ function renderTickets(containerId, items, options = {}) {
       return `<span class="ticket-chip ${kindCls}"><span class="ticket-chip__code ${codeCls}"><span class="ticket-chip__prefix">${prefix}</span>${number}</span></span>`;
     })
     .join("");
+
+  if (options.highlightFirst) {
+    highlightFirstTicketInPanel(panel);
+  }
+}
+
+function highlightFirstTicketInPanel(panel) {
+  const firstCode = panel.querySelector(".ticket-chip__code");
+  if (!firstCode) return;
+  firstCode.classList.add("ticket-chip__code--highlight");
+  window.setTimeout(() => {
+    firstCode.classList.remove("ticket-chip__code--highlight");
+  }, FIRST_TICKET_HIGHLIGHT_MS);
 }
 
 function totalActiveTickets() {
@@ -208,8 +223,8 @@ function initAutoScrollTicketLists() {
 }
 
 function init() {
-  renderTickets("tickets-handin", QUEUE.handIn);
-  renderTickets("tickets-security", QUEUE.security);
+  renderTickets("tickets-handin", QUEUE.handIn, { highlightFirst: true });
+  renderTickets("tickets-security", QUEUE.security, { highlightFirst: true });
   renderTickets("tickets-waiting", QUEUE.waiting);
   updateCounts();
   tickClock();

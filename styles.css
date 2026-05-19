@@ -277,7 +277,7 @@ html[data-theme="dark"] .theme-toggle__moon {
 
 .queue-col__title {
   margin: 0;
-  font-size: 1.89rem; /* +50% from 1.26rem */
+  font-size: 2.268rem; /* +20% from 1.89rem */
   font-weight: 800;
 }
 
@@ -287,7 +287,7 @@ html[data-theme="dark"] .queue-col__title {
 
 .queue-col__meta {
   margin: 0.1rem 0 0;
-  font-size: 1.02rem; /* +20% from 0.85rem */
+  font-size: 1.224rem; /* +20% from 1.02rem */
   color: var(--text-muted);
 }
 
@@ -299,7 +299,7 @@ html[data-theme="dark"] .queue-col__title {
   border: none;
   background: rgba(255, 255, 255, 0.45);
   color: var(--text);
-  font-size: clamp(2.625rem, 5vw, 3.375rem); /* +25% */
+  font-size: clamp(3.6225rem, 6.9vw, 4.6575rem); /* ticket numbers +15% */
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem 1rem;
@@ -340,6 +340,11 @@ html[data-theme="dark"] .queue-col--waiting .ticket-panel {
   font-weight: 900;
   font-size: inherit;
   color: inherit;
+  transition: color 0.4s ease;
+}
+
+.ticket-chip__code--highlight {
+  color: #facc15 !important;
 }
 
 /* Waiting column: ticket numbers slightly smaller */
@@ -388,7 +393,7 @@ html[data-theme="dark"] .ticket--active {
 
 .ticket__code {
   font-family: "Arial Black", Arial, sans-serif;
-  font-size: clamp(2.025rem, 4.5vw, 2.475rem); /* +50% */
+  font-size: clamp(2.7945rem, 6.21vw, 3.4155rem); /* ticket numbers +15% */
   font-weight: 700;
   font-variant-numeric: tabular-nums;
   letter-spacing: 0.02em;
