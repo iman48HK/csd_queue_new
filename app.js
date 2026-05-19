@@ -124,6 +124,8 @@ function initTheme() {
   const stored = localStorage.getItem("queueflow-theme");
   if (stored === "dark" || stored === "light") {
     root.dataset.theme = stored;
+  } else {
+    root.dataset.theme = "dark";
   }
   btn?.addEventListener("click", () => {
     const next = root.dataset.theme === "dark" ? "light" : "dark";
