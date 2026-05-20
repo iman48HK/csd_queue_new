@@ -3,18 +3,18 @@
  * Prefix M → blue styling, W → orange. "active" highlights Security Check card.
  */
 const QUEUE = {
-  handIn: ["M002", "M003"],
+  handIn: ["M002", "M003-e"],
   security: [
-    { code: "W001", active: false },
+    { code: "W001-e", active: false },
     { code: "M001", active: true },
   ],
   waiting: [
     "M004",
-    "M005",
+    "M005-e",
     "W002",
     "W003",
-    "W004",
-    "DA001",
+    "W004-e",
+    "DA001-e",
     "DA002",
   ],
 };

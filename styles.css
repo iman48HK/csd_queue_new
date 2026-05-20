@@ -216,7 +216,7 @@ html[data-theme="dark"] .theme-toggle__moon {
 
 .queue-col {
   background: var(--surface);
-  border: 1px solid #ffffff;
+  border: 2px solid #ffffff;
   border-radius: 12px;
   box-shadow: var(--shadow);
   padding: 0.9rem;
@@ -246,7 +246,9 @@ html[data-theme="dark"] .theme-toggle__moon {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  margin-bottom: 0.85rem;
+  margin-bottom: 0;
+  padding-bottom: 0.85rem;
+  border-bottom: 2px solid #ffffff;
   flex-shrink: 0;
 }
 
@@ -287,7 +289,7 @@ html[data-theme="dark"] .queue-col__title {
 
 /* Plain text ticket panel */
 .ticket-panel {
-  margin-top: 0.25rem;
+  margin-top: 0;
   padding: 0.9rem 1rem;
   border-radius: 10px;
   border: none;
