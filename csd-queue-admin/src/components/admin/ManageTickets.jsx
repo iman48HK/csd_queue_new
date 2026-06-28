@@ -21,6 +21,11 @@ const STATUS_STYLES = {
   CANCELLED: "bg-red-100 text-red-600 border border-red-200",
 };
 
+function formatStatus(status) {
+  if (status === "CHECKED_OUT") return "CHECKED-OUT";
+  return status;
+}
+
 const COUNTER_LABEL = {
   Waiting: "A - Waiting",
   "Hand-In": "B - Hand-In",
@@ -203,7 +208,7 @@ export default function ManageTickets() {
                     <span
                       className={`inline-block text-xs font-bold px-3 py-1 rounded-full ${STATUS_STYLES[ticket.status] || STATUS_STYLES.WAITING}`}
                     >
-                      {ticket.status}
+                      {formatStatus(ticket.status)}
                     </span>
                   </td>
                   <td className="px-4 py-3">

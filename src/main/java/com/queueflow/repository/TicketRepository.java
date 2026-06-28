@@ -154,19 +154,12 @@ public class TicketRepository {
 
     public TicketDetailDto recordCheckOut(long queueId) {
         TicketDetailDto ticket = requireTicket(queueId);
-        if ("CANCELLED".equals(ticket.status()) || "COMPLETED".equals(ticket.status())) {
+        if ("CANCELLED".equals(ticket.status())
+                || "COMPLETED".equals(ticket.status())
+                || "CHECKED_OUT".equals(ticket.status())) {
             throw new BadRequestException("Ticket cannot be checked out");
         }
-        jdbc.update(
-                """
-                UPDATE T_QUEUE
-                SET OUT_TIME = NVL(OUT_TIME, SYSDATE),
-                    LAST_UPDATE_TIME = SYSDATE
-                WHERE QUEUE_ID = ?
-                """,
-                queueId);
-        insertQueueLog(queueId, "CHECKED_OUT", null, null);
-        return requireTicket(queueId);
+        return setStatus(queueId, "CHECKED_OUT");
     }
 
     public TicketDetailDto completeTicket(long queueId) {
@@ -190,7 +183,7 @@ public class TicketRepository {
         if ("CHECKED_IN".equals(status)) {
             sql.append(", IN_TIME = NVL(IN_TIME, SYSDATE)");
         }
-        if ("COMPLETED".equals(status)) {
+        if ("CHECKED_OUT".equals(status) || "COMPLETED".equals(status)) {
             sql.append(", OUT_TIME = NVL(OUT_TIME, SYSDATE)");
         }
         if ("CALLED".equals(status)) {
