@@ -1,0 +1,11 @@
+target/
+.idea/
+*.iml
+
+config/application.properties
+
+logs/
+csd-queue-admin/node_modules/
+csd-queue-admin/dist/
+
+.DS_Store

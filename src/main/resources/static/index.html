@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QueueFlow</title>
+    <link rel="stylesheet" href="/assets/fonts/fonts.css" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="app" id="app-root">
+      <p class="status-line">
+        <span class="status-line__dot" aria-hidden="true"></span>
+        <span>Live Queue Status</span>
+        <span class="status-line__sep">·</span>
+        <span id="active-count-label">0 tickets in progress</span>
+      </p>
+
+      <main class="columns">
+        <section class="queue-col queue-col--handin" aria-labelledby="col-handin">
+          <div class="queue-col__head">
+            <div class="queue-col__icon queue-col__icon--hand" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0" />
+                <path d="M14 10V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v2" />
+                <path d="M10 10.5V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v8" />
+                <path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 .86-3.35l.59-.22A2 2 0 0 1 6 18l4.24-4.24 2.82-2.82" />
+              </svg>
+            </div>
+            <div>
+              <h2 class="queue-col__title" id="col-handin">交來物品窗口 Hand-In Articles Counter</h2>
+            </div>
+          </div>
+          <div class="ticket-panel" id="tickets-handin"></div>
+        </section>
+
+        <section class="queue-col queue-col--security" aria-labelledby="col-security">
+          <div class="queue-col__head">
+            <div class="queue-col__icon queue-col__icon--shield" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22">
+                <path fill="currentColor" d="M12 2 4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3zm0 17.91C8.61 19.21 6 15.45 6 11.09V6.39l6-2.25 6 2.25v4.7c0 4.36-2.61 8.12-6 8.82z" />
+              </svg>
+            </div>
+            <div>
+              <h2 class="queue-col__title" id="col-security">開始探訪 Start Visit</h2>
+            </div>
+          </div>
+          <div class="ticket-panel" id="tickets-security"></div>
+        </section>
+
+        <section class="queue-col queue-col--waiting" aria-labelledby="col-waiting">
+          <div class="queue-col__head">
+            <div class="queue-col__icon queue-col__icon--wait" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22">
+                <path fill="currentColor" d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.2 3.2.8-1.3-4.5-2.7V7z" />
+              </svg>
+            </div>
+            <div>
+              <h2 class="queue-col__title" id="col-waiting">等候籌號: Waiting Ticket No</h2>
+            </div>
+          </div>
+          <div class="ticket-panel ticket-list-scroll" id="tickets-waiting"></div>
+        </section>
+      </main>
+
+      <div class="ticker-wrap" aria-hidden="true">
+        <div class="ticker" id="ticker"></div>
+      </div>
+    </div>
+
+    <div class="announcement-overlay hidden" id="announcement-overlay" role="dialog" aria-modal="true" aria-labelledby="announcement-message">
+      <div class="announcement-overlay__panel">
+        <div class="announcement-overlay__message" id="announcement-message"></div>
+      </div>
+    </div>
+
+    <script src="/app.js?v=7"></script>
+  </body>
+</html>

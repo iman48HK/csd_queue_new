@@ -1,0 +1,12 @@
+{
+  "apiBaseUrl": "",
+  "pollIntervalMs": 3000,
+  "highlightDurationMs": 30000,
+  "defaultLanguage": "zh-HK",
+  "speechEnabled": true,
+  "speechVoiceHint": {
+    "zh-HK": "zh-HK",
+    "en-US": "en-US",
+    "yue": "zh-HK"
+  }
+}

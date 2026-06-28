@@ -1,0 +1,23 @@
+# Copy to config/application.properties and adjust after deployment.
+
+server.port=${SERVER_PORT:8080}
+
+spring.datasource.url=${ORACLE_JDBC_URL:jdbc:oracle:thin:@(description=(address=(protocol=tcps)(port=2484)(host=db.freesql.com))(connect_data=(service_name=23ai_34ui2)))}
+spring.datasource.username=${ORACLE_USERNAME:}
+spring.datasource.password=${ORACLE_PASSWORD:}
+spring.datasource.driver-class-name=oracle.jdbc.OracleDriver
+
+queueflow.frontend.config-path=${QUEUEFLOW_FRONTEND_CONFIG:config/frontend/config.json}
+
+queueflow.display.poll-interval-ms=${DISPLAY_POLL_INTERVAL_MS:3000}
+queueflow.ticket.highlight-duration-ms=${TICKET_HIGHLIGHT_DURATION_MS:30000}
+queueflow.speech.default-language=${SPEECH_DEFAULT_LANGUAGE:zh-HK}
+
+queueflow.ins-code=${INS_CODE:LWH}
+queueflow.default-create-queue-type=${DEFAULT_CREATE_QUEUE_TYPE:C}
+queueflow.display.handin-queue-type=${DISPLAY_HANDIN_QUEUE_TYPE:B}
+queueflow.display.handin-status=${DISPLAY_HANDIN_STATUS:CALLED}
+queueflow.display.security-queue-type=${DISPLAY_SECURITY_QUEUE_TYPE:C}
+queueflow.display.security-status=${DISPLAY_SECURITY_STATUS:CALLED}
+queueflow.display.waiting-queue-type=${DISPLAY_WAITING_QUEUE_TYPE:A}
+queueflow.display.waiting-status=${DISPLAY_WAITING_STATUS:WAITING}
