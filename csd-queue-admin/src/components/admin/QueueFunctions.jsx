@@ -275,7 +275,7 @@ export default function QueueFunctions({ subSection }) {
       <Card className="md:col-span-2 border-2 border-border">
         <CardHeader className="pb-2 pt-4 px-4">
           <CardTitle className="text-sm font-semibold">Manage Tickets</CardTitle>
-          <p className="text-xs text-muted-foreground">View and manage all in-progress queuing tickets (created today).</p>
+          <p className="text-xs text-muted-foreground">View and manage today's queuing tickets, including checked-out.</p>
         </CardHeader>
         <CardContent className="px-0 pb-4">
           <ManageTickets />

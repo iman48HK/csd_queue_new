@@ -45,6 +45,15 @@ public class TicketRepository {
                 properties.getInsCode());
     }
 
+    public List<TicketDetailDto> listManageQueueTickets() {
+        return jdbc.query(
+                baseTicketQuery()
+                        + TicketQuerySupport.MANAGE_QUEUE_FILTER
+                        + " ORDER BY q.QUEUE_TYPE, q.CREATED_TIME, q.QUEUE_ID",
+                this::mapTicket,
+                properties.getInsCode());
+    }
+
     public List<TicketDetailDto> listServedTodayTickets() {
         return jdbc.query(
                 baseTicketQuery()

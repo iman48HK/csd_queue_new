@@ -23,6 +23,9 @@ public class TicketService {
                 && ("ACTIVE".equalsIgnoreCase(status) || "IN_PROGRESS".equalsIgnoreCase(status))) {
             return repository.listInProgressTickets();
         }
+        if (status != null && "MANAGE".equalsIgnoreCase(status)) {
+            return repository.listManageQueueTickets();
+        }
         if (status != null && "SERVED".equalsIgnoreCase(status)) {
             return repository.listServedTodayTickets();
         }

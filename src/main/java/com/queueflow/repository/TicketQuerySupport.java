@@ -9,5 +9,12 @@ public final class TicketQuerySupport {
             AND s.STATUS_CODE NOT IN ('CANCELLED', 'COMPLETED', 'CHECKED_OUT')
             """;
 
+    /** Admin manage-tickets view: includes checked-out tickets for today. */
+    public static final String MANAGE_QUEUE_FILTER =
+            """
+            AND TRUNC(q.CREATED_TIME) = TRUNC(SYSDATE)
+            AND s.STATUS_CODE NOT IN ('CANCELLED', 'COMPLETED')
+            """;
+
     private TicketQuerySupport() {}
 }

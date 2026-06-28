@@ -69,7 +69,7 @@ export default function ManageTickets() {
   const loadTickets = useCallback(async () => {
     setLoading(true);
     try {
-      const rows = await queueApi.listTickets("IN_PROGRESS");
+      const rows = await queueApi.listTickets("MANAGE");
       setTickets(
         rows.map((row) => ({
           id: row.id,
@@ -236,7 +236,7 @@ export default function ManageTickets() {
             </tbody>
           </table>
           {tickets.length === 0 && (
-            <p className="text-center text-muted-foreground text-sm py-8">No in-progress tickets.</p>
+            <p className="text-center text-muted-foreground text-sm py-8">No tickets for today.</p>
           )}
         </div>
       )}
